@@ -80,7 +80,7 @@ To begin to use Pathfinder project, run the following *`./pathfinder [filename]`
 
 ## Authors
 
-- Yaroslav Ohrudkov - *Application development* - [yohrudkov](https://github.com/yohrudkov)
+- Yaroslav Ohrudkov - *Program development* - [yohrudkov](https://github.com/yohrudkov)
 
 ## License
 
