@@ -49,12 +49,16 @@ static void check_push(char *line, t_list **list) {
 
 void mx_read_from_file(t_list **list, char *str_path) {
     int fd = open(str_path, O_RDONLY);
+    int lines = 0;
     char *line = NULL;
 
     while (mx_getline(&line, '\n', &fd) != 1) {
         check_push(line, list);
         mx_strdel(&line);
+        lines += 1;
     }
+    if (lines == 0)
+        mx_error(3, 0);
     check_push(line, list);
     mx_strdel(&line);
 }

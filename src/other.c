@@ -14,6 +14,8 @@ void mx_error(int flag, int value) {
         fprintf(stderr, "error: line %d already", value);
         fprintf(stderr, " exist with the different value\n");
     }
+    else if (flag == 3)
+        fprintf(stderr, "error: file empty\n");
     exit(EXIT_FAILURE);
 }
 

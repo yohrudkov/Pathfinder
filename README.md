@@ -14,10 +14,8 @@
 ## Table of Contents
 
 - [Introduction](#Introduction)
-- [Features](#Features)
 - [Build Process](#Build-Process)
-    - [Dependencies](#Dependencies)
-    - [Preparation](#Preparation)
+    - [Description](#Description)
     - [Compilation](#Compilation)
     - [Initiation](#Initiation)
 - [Authors](#Authors)
@@ -26,57 +24,58 @@
 
 ## Introduction
 
-Desktop application for reading and editing metadata of several popular audio formats.\
-Utag uses a graphical interface to make it easy to modify tags and is completely free to use.
-
-<p align="center">
-    <img alt="Utag"
-    title="Utag"
-    src="https://github.com/yohrudkov/Utag/blob/main/app/resources/img/1.jpg?raw=true"
-    width="400">
-    <img alt="Utag"
-    title="Utag"
-    src="https://github.com/yohrudkov/Utag/blob/main/app/resources/img/2.jpg?raw=true"
-    width="400">
-</p>
-
-## Features
-
-A few of the things you can do with Utag:
-
-* Supports several popular audio file formats
-* Allows to edit more tags of audio files (year, track number, etc.)
-* Supports the display and edit of the lyrics
-* Opens the directory with the files through the GUI
-* Edits an album image for an audio file and displays it via the GUI
-* Allows browsing the opened directory and all subdirectories recursively
-* Sort audio files in the directory
-* Accept a directory as a command-line argument
+The program that finds all the shortest paths between all the islands, using information about the bridges that connect them. The program:
+* reads data from a file. Its name is specified as a command-line argument;
+* finds all the shortest paths between each combination of two islands;
+* prints the paths to the standard output.
 
 ## Build Process
 
-### Dependencies
+### Description
 
-- [CMake](https://cmake.org) - *an open-source, cross-platform family of tools designed to build, test and package software.*
-- [Qt](https://www.qt.io) - *a free and open-source widget toolkit for creating graphical user interfaces as well as cross-platform applications that run on various software and hardware platforms.*
-- [TagLib](https://taglib.org) - *a library for reading and editing the meta-data of several popular audio formats.*
+Input file description:
+* the remaining lines describe the distance between the two islands, one per line. Each line consists of two islands, the length of the bridge between them and a newline ina format: \
+*`[Name(from)]-[Name(to)]=[Value]`*:
+    * the names of the islands contain only alphabetic characters and cannot be empty or identical;
+    * the length of the bridge contains only numbers, cannot be empty and has a positive value;
+    * the sum of the lengths of all bridges in the file does not exceed *`INT_MAX`*.
 
-### Preparation
+The output consists of information blocks about a specific shortest path. Each block contains:
+* *`<<====================>>`* the boundary;
+* Path: *`<island1> -> <island2>*` that shows the initial point and the final destination;
+* Route: *`<island1> -> <all_islands_between> -> <island2>*` that shows the full route between the two islands;
+* Distance: *`<length1> + <length2> = <sum>`* that shows the distance between every island in the route, as well as their sum that indicates the distance to the final destination.
 
-For find_package to be successful, CMake must find the Qt installation in one of the following ways:
+Error handling. The program prints errors to the standard error stream *`stderr`* in the following order of priority:
+* *`usage: ./pathfinder [filename]`* if there is an invalid number of command-line arguments;
+* *`error: invalid filename`* if the file does not exist;
+* *`error: file empty`* is empty if the file is empty;
+* *`error: line [line_number] isn't valid`* is not valid if one of the remaining lines does not match the format above;
+* *`error: line [line_number] already exist with the different value`* if there is more than one bridge between the islands.
 
-- Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix:
-    - uncomment and change CMAKE_PREFIX_PATH path in *`Utag/CMakeLists.txt`* file;
-    - or just run *`export CMAKE_PREFIX_PATH=/path_to_qt_directory`* commend in shell.
-- Set the Qt5_DIR in the CMake cache to the location of the Qt5Config.cmake file.
+Map example:
+<p align="center">
+    <img alt="Example"
+    title="Example"
+    src="https://github.com/yohrudkov/Pathfinder/blob/main/resources/map.jpg?raw=true"
+    width="300">
+</p>
+
+Program's output example:
+<p align="center">
+    <img alt="Pathfinder"
+    title="Pathfinder"
+    src="https://github.com/yohrudkov/Pathfinder/blob/main/resources/output.jpg?raw=true"
+    width="300">
+</p>
 
 ### Compilation
 
-To build Utag project, run the following *`./build.sh`* script.
+Compile C-files with clang compiler and use these flags *`clang -std=c11 -Wall -Wextra -Werror -Wpedantic`*.
 
 ### Initiation
 
-To begin to use Utag project, run the following *`./utag`* exe file.
+To begin to use Pathfinder project, run the following *`./pathfinder [filename]`* exe file.
 
 ## Authors
 
@@ -85,7 +84,7 @@ To begin to use Utag project, run the following *`./utag`* exe file.
 ## License
 
 Collision is an open-sourced software licensed under the [MIT license](https://en.wikipedia.org/wiki/MIT_License). \
-[Copyright (c) 2020 yohrudkov](https://github.com/yohrudkov/Utag/blob/main/LICENSE).
+[Copyright (c) 2020 yohrudkov](https://github.com/yohrudkov/Pathfinder/blob/main/LICENSE).
 
 ## Acknowledgments
 
