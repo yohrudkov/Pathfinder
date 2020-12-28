@@ -42,8 +42,8 @@ Input file description:
 
 The output consists of information blocks about a specific shortest path. Each block contains:
 * *`<<====================>>`* the boundary;
-* Path: *`<island1> -> <island2>*` that shows the initial point and the final destination;
-* Route: *`<island1> -> <all_islands_between> -> <island2>*` that shows the full route between the two islands;
+* Path: *`<island1> -> <island2>`* that shows the initial point and the final destination;
+* Route: *`<island1> -> <all_islands_between> -> <island2>`* that shows the full route between the two islands;
 * Distance: *`<length1> + <length2> = <sum>`* that shows the distance between every island in the route, as well as their sum that indicates the distance to the final destination.
 
 Error handling. The program prints errors to the standard error stream *`stderr`* in the following order of priority:
@@ -71,7 +71,8 @@ Program's output example:
 
 ### Compilation
 
-Compile C-files with clang compiler and use these flags *`clang -std=c11 -Wall -Wextra -Werror -Wpedantic`*.
+Compile C-files with clang compiler and use these flags:\
+*`clang -std=c11 -Wall -Wextra -Werror -Wpedantic`*.
 
 ### Initiation
 
