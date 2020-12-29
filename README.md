@@ -71,8 +71,7 @@ Program's output example:
 
 ### Compilation
 
-Compile C-files with clang compiler and use these flags:\
-*`clang -std=c11 -Wall -Wextra -Werror -Wpedantic`*.
+To compile Pathfinder project, run the following *`make`* Makefile.
 
 ### Initiation
 
