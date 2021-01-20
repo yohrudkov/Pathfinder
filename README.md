@@ -1,6 +1,6 @@
 <h1 align="center"> Pathfinder </h1> <br>
 
-<p align="center"> The program that finds all the shortest paths between all the islands, using information about the bridges that connect them. </p>
+<p align="center"> The program finds all the shortest paths between all the islands, using information about the bridges that connect them. </p>
 
 <p align="center">
     <a href="https://github.com/yohrudkov">
