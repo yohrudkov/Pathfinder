@@ -1,4 +1,4 @@
-#include "header.h"
+#include "../inc/header.h"
 
 static bool check_new_point(t_list *graph, char *name) {
     if (!graph)

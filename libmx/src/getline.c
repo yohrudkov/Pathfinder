@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "../inc/libmx.h"
 
 int mx_getline(char **line, char delim, int *fd) {
     char ch;

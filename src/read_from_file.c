@@ -1,4 +1,4 @@
-#include "header.h"
+#include "../inc/header.h"
 
 static void check_line(char *line, t_list **list) {
     if (!line

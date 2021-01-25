@@ -1,4 +1,4 @@
-#include "header.h"
+#include "../inc/header.h"
 
 static void reverse_list(t_list **ans) {
     t_list *prev = NULL;

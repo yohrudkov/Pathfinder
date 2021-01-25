@@ -1,4 +1,4 @@
-#include "header.h"
+#include "../inc/header.h"
 
 void mx_error(int flag, int value) {
     if (flag == 0)

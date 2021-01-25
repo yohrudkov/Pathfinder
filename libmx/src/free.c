@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "../inc/libmx.h"
 
 void mx_free(char **str) {
     if (!str || !*str)

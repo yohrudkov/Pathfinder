@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "../inc/libmx.h"
 
 bool mx_foreach(char *str, bool (*f)(int)) {
     for (int i = 0; str[i]; i++)

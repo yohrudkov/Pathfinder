@@ -1,4 +1,4 @@
-#include "header.h"
+#include "../inc/header.h"
 
 static t_list *copy_visited(t_list *visited, char *name, int value) {
     t_list *copy = NULL;

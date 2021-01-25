@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "../inc/libmx.h"
 
 char *mx_strcopy(char *str) {
     if (!str || !*str)

@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "../inc/libmx.h"
 
 char *mx_superjoin(char **str1, char **str2, uint8_t flag) {
     char *str_new = mx_strjoin(*str1, *str2);

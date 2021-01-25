@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "../inc/libmx.h"
 
 char *mx_copylen(char *str, int from, int to) {
     if (to > mx_strlen(str)

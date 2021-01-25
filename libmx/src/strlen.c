@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "../inc/libmx.h"
 
 int mx_strlen(char *str) {
     if (!str || !*str)

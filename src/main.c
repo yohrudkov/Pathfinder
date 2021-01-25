@@ -1,4 +1,4 @@
-#include "header.h"
+#include "../inc/header.h"
 
 static void trim_node(void *node) {
     mx_strdel(&((t_points *)node)->from);

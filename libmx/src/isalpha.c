@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "../inc/libmx.h"
 
 bool mx_isalpha(int ch) {
     if ((ch >= 65 && ch <= 90)

@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "../inc/libmx.h"
 
 char *mx_strjoin(char *str1, char *str2) {
     char *join_str = mx_newstr(mx_strlen(str1) + mx_strlen(str2));

@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "../inc/libmx.h"
 
 int mx_findchar(char *str, char ch) {
     for (int i = 0; str[i]; i++)

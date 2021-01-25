@@ -1,4 +1,4 @@
-#include "libmx.h"
+#include "../inc/libmx.h"
 
 char *mx_add_char(char **line, char ch) {
     char *new_str = mx_newstr(mx_strlen(*line) + 1);
